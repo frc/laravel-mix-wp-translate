@@ -1,0 +1,28 @@
+{
+  "name": "laravel-mix-wp-translate",
+  "version": "0.0.1",
+  "description": "Laravel Mix extension to translate WordPress themes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frc/laravel-mix-wp-translate.git"
+  },
+  "keywords": [
+    "WordPress",
+    "Translate"
+  ],
+  "author": "Janne Aalto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frc/laravel-mix-wp-translate/issues"
+  },
+  "homepage": "https://github.com/frc/laravel-mix-wp-translate#readme",
+  "dependencies": {
+    "glob": "^7.1.6",
+    "shelljs": "^0.8.3",
+    "webpack-chokidar-plugin": "^1.0.5"
+  }
+}
