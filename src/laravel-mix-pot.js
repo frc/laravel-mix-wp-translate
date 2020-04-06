@@ -22,10 +22,14 @@ class Pot {
     register( themes, options = {} ) {
 
         let basePath = '/themes';
-        if ( typeof options.basePath != 'undefined' ) {
+        if ( typeof options.basePath !== 'undefined' ) {
             basePath = options.basePath;
         }
         const themesPath = basePath.replace( /^\/|\/$/g, '' );
+        let cliOptions = '';
+        if (typeof options.skipJS !== 'undefined' && options.skipJS) {
+          cliOptions = '--skip-js';
+        }
 
         this.config = themes.reduce( ( config, theme) => {
             const name = path.basename( theme );
@@ -36,7 +40,7 @@ class Pot {
             const src = path.join( rootPath, `${themesPath}/${name}` );
 
             config.push({
-                langPath, src, dest, watch: `${src}/**/*.php`
+                langPath, src, dest, watch: `${src}/**/*.php`, options: cliOptions
             });
             return config;
         }, [] );
@@ -62,8 +66,8 @@ class Pot {
     run() {
         this.config.forEach( theme => {
             if ( fs.existsSync( theme.langPath ) ) {
-                sh.exec( `wp i18n make-pot ${theme.src} ${theme.dest}`, { silent: true } );
-                sh.exec( `wp i18n make-json ${theme.src} ${theme.dest}`, { silent: true } );
+                sh.exec( `wp i18n make-pot ${theme.src} ${theme.dest} ${theme.options}`, { silent: true } );
+                sh.exec( `wp i18n make-json ${theme.src} ${theme.dest} ${theme.options}`, { silent: true } );
             }
 
         } );
