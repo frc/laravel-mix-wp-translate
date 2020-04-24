@@ -1,5 +1,21 @@
 ## Laravel Mix extension to translate WordPress themes
 
+If you are getting weird errors like:
+
+```
+Warning: Failed to set locale category LC_NUMERIC to en_FI.
+Warning: Failed to set locale category LC_TIME to en_FI.
+Warning: Failed to set locale category LC_COLLATE to en_FI.
+Warning: Failed to set locale category LC_MONETARY to en_FI.
+Warning: Failed to set locale category LC_MESSAGES to en_FI.
+```
+You need to set `LC_ALL` (I used `en_US.UTF-8`):
+```
+# Bash -> ~/.bash_profile 
+# Zsh (Z shell) ->  ~/.zshrc
+export LC_ALL=en_US.UTF-8
+```
+
 ```js
 const mix = require( 'laravel-mix' );
 require('laravel-mix-wp-translate');
