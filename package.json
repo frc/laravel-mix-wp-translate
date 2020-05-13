@@ -1,6 +1,6 @@
 {
   "name": "@frc/laravel-mix-wp-translate",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Laravel Mix extension to translate WordPress themes",
   "main": "index.js",
   "scripts": {
