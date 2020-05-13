@@ -113,3 +113,5 @@ dist
 *.iml
 out
 gen
+
+.git
