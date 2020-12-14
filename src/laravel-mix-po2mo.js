@@ -80,7 +80,7 @@ class Po2Mo {
                 cwd: theme.langPath,
             } ).forEach( file => {
                 file = path.join( theme.langPath, file );
-                sh.exec( 'msgfmt -o ' + file.replace( 'po', 'mo' ) + ' ' + file );
+                sh.exec( 'msgfmt -o ' + file.replace( '.po', '.mo' ) + ' ' + file );
                 sh.echo( file );
             } );
         } );
